@@ -9,32 +9,32 @@ router.get('/', async (req, res) => {
   res.render('login');
 });
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const postsData = await blogPosts.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
+router.get('/', async (req, res) => {
+  try {
+    const postsData = await blogPosts.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-//     res.render('homepage', getAllPosts);
-//     res.status(200).json(getAllPosts);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render('homepage', getAllPosts);
+    res.status(200).json(getAllPosts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// router.get('/login', (req, res) => {
+router.get('/login', (req, res) => {
 
-//   try {
-//     res.render('login');
-//   } catch (error) {
-//     res.status(500).json(err);
-//   }
-// });
+  try {
+    res.render('login');
+  } catch (error) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/signup', (req, res) => {
   try {
