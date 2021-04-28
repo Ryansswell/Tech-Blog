@@ -5,6 +5,10 @@ router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
+router.get('/', async (req, res) => {
+  res.render('login');
+});
+
 // router.get('/', async (req, res) => {
 //   try {
 //     const postsData = await blogPosts.findAll({
@@ -23,14 +27,14 @@ router.get('/', async (req, res) => {
 //   }
 // });
 
-router.get('/login', (req, res) => {
+// router.get('/login', (req, res) => {
 
-  try {
-    res.render('login');
-  } catch (error) {
-    res.status(500).json(err);
-  }
-});
+//   try {
+//     res.render('login');
+//   } catch (error) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/signup', (req, res) => {
   try {
